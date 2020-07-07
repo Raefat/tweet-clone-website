@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Hello World</h1>
+
+
+
+
+
+
+
+
+
+    <script>
+    let xhr = new XMLHttpRequest();
+    let url = "/tweets";
+
+    xhr.responseType = "json";
+    xhr.open("GET", url);
+    xhr.onload = function (){
+        var serverResponse = xhr.response
+        var listedItems = serverResponse.response
+        console.log(listedItems);
+    }
+    xhr.send()
+    </script>
+{% endblock  %}
